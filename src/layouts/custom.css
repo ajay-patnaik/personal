@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Karla');
+
+html {
+  overflow: hidden;
+  font-family: 'Karla', sans-serif !important;
+}
+
+.page-wrapper {
+  width: 100vw;
+  height: 100vh;
+}
+
+.active {
+  padding-bottom: 5px;
+  border-bottom: 5px #6464FF solid;
+}
+
+.menu-item:hover {
+  padding-bottom: 5px;
+  border-bottom: 5px #b264ff solid;
+}

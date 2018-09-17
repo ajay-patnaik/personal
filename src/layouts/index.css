@@ -627,14 +627,3 @@ pre tt:after {
     font-size: 100%;
   }
 }
-
-/* CUSTOM STYLES */
-.active {
-  padding-bottom: 5px;
-  border-bottom: 5px #6464FF solid;
-}
-
-.menu-item:hover {
-  padding-bottom: 5px;
-  border-bottom: 5px #b264ff solid;
-}

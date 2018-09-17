@@ -9,7 +9,8 @@
     "gatsby-plugin-create-client-paths": "^1.0.8",
     "gatsby-plugin-page-transitions": "^1.0.7",
     "gatsby-plugin-react-helmet": "^2.0.11",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "uikit": "^3.0.0-rc.16"
   },
   "keywords": [
     "gatsby"

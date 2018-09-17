@@ -4,15 +4,7 @@ import PageTransition from 'gatsby-plugin-page-transitions';
 import background from '../images/background6.jpg';
 
 const IndexPage = () => (
-    <div style={{
-        backgroundSize: 'cover',
-        width: '100vw',
-        height: '100vh',
-        color: '#FFFFFF',
-        display: 'flex',
-        justifyContent: 'center',
-      }}
-    >
+    <div className="page-wrapper">
       <div style={{
           paddingTop: '120px',
           width: '960px',
