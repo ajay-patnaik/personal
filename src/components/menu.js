@@ -67,19 +67,25 @@ class Menu extends Component {
         </div>
 
         <div className="uk-margin-small-top uk-hidden@m">
+
           <div className="uk-offcanvas-content">
             <div className="uk-flex-inline uk-flex-between" data-uk-scrollspy="cls:uk-animation-slide-top" style={{width:'100%'}}>
-              <div><button className="" type="button" data-uk-toggle="target: #offcanvas-usage"><IoIosMenu color="#FFFFFF" size="45px" /></button></div>
+              <div><button className="button" type="button" data-uk-toggle="target: #offcanvas-nav"><IoIosMenu color="#FFFFFF" size="45px" /></button></div>
               <div><span className="menu-title uk-margin-small-right">Ajay Patnaik</span></div>
             </div>
-            <div id="offcanvas-usage" data-uk-offcanvas>
+            <div id="offcanvas-nav" data-uk-offcanvas="overlay: true">
               <div className="uk-offcanvas-bar">
-                <button className="uk-offcanvas-close" type="button" data-uk-close></button>
-                  <h3>Title</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <ul className="uk-nav uk-nav-default">
+                  {
+                    this.state.data.map((l, i) => (
+                      <li key={i} className={l.active}><Link to={l.link} onClick={() => this.active(i)} data-uk-toggle="target: #offcanvas-nav">{l.title}</Link></li>
+                    ))
+                  }
+                </ul>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     );

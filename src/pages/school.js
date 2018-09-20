@@ -1,7 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import PageTransition from 'gatsby-plugin-page-transitions';
-import background from '../images/background10.jpg';
 
 const SchoolPage = () => (
 
