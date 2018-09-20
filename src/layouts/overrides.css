@@ -1,0 +1,43 @@
+/* TAB BAR */
+ul.uk-flex-center {
+  justify-content: space-evenly;
+}
+
+.uk-tab > .uk-active > a {
+  color: #FFFFFF;
+  padding-bottom: 5px;
+  border-color: #6464FF;
+  border-bottom-width: 5px;
+  border-bottom-style: solid;
+}
+
+.uk-tab > * > a {
+  color: #FFFFFF;
+  font-size: 24px;
+  text-transform: capitalize;
+  padding: 0px;
+}
+
+.uk-tab > * > a:hover {
+  color: #FFFFFF;
+  padding-bottom: 5px;
+  border-color: #b264ff;
+  border-bottom-width: 5px;
+  border-bottom-style: solid;
+}
+
+.uk-tab > * > a:focus {
+  color: #FFFFFF;
+  padding-bottom: 5px;
+  border-color: #6464FF;
+  border-bottom-width: 5px;
+  border-bottom-style: solid;
+}
+
+.uk-tab::before {
+  border-bottom: none;
+}
+
+.uk-tab > * {
+  padding-left: 0px;
+}

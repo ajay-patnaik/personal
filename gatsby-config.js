@@ -1,7 +1,4 @@
 module.exports = {
-  siteMetadata: {
-    title: 'Ajay Patnaik',
-  },
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-page-transitions',
