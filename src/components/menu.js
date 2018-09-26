@@ -7,6 +7,7 @@ class Menu extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      path: '',
       data: [
         {
           title: 'Home',
@@ -38,11 +39,25 @@ class Menu extends Component {
      this.active = this.active.bind(this);
   }
 
-  componentWillMount() {
-    for(var i = 0; i < this.state.data.length; i++) {
-      if(this.state.data[i].link == window.location.pathname) {
-        this.state.data[i].active = 'uk-active';
-      }
+  componentDidMount() {
+    try {
+      var UIkit = require('../../node_modules/uikit/dist/js/uikit.js')
+      require('../../node_modules/uikit/dist/js/uikit-icons.js')
+      var $ = require('jquery');
+
+      var path = window.location.pathname;
+      var s = path.split("/");
+      var p = "/" + s[1];
+
+      this.setState({
+        path: p
+      });
+
+      $('.uk-offcanvas-content a').click(function() {
+        window.location.reload();
+      });
+    } catch(e) {
+
     }
   }
 
@@ -54,6 +69,12 @@ class Menu extends Component {
   }
 
   render() {
+    for(var i = 0; i < this.state.data.length; i++) {
+      if(this.state.data[i].link == this.state.path) {
+        this.state.data[i].active = 'uk-active';
+      }
+    }
+
     return (
       <div>
         <div className="uk-margin-medium-top uk-visible@m">
@@ -78,7 +99,7 @@ class Menu extends Component {
                 <ul className="uk-nav uk-nav-default">
                   {
                     this.state.data.map((l, i) => (
-                      <li key={i} className={l.active}><Link to={l.link} onClick={() => this.active(i)} data-uk-toggle="target: #offcanvas-nav">{l.title}</Link></li>
+                      <li key={i} className={l.active}><Link to={l.link} onClick={() => this.active(i)}>{l.title}</Link></li>
                     ))
                   }
                 </ul>

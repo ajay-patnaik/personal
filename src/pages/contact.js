@@ -1,87 +1,89 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import PageTransition from 'gatsby-plugin-page-transitions';
+import { Component } from "react"
 
-const ContactPage = () => (
+import resume from '../images/Patnaik.Ajay.Resume.pdf'
 
-    <div style={{
-        backgroundSize: 'cover',
-        width: '100vw',
-        height: '100vh',
-        color: '#FFFFFF',
-        display: 'flex',
-        justifyContent: 'center',
-      }}
-    >
-      <div style={{
-          paddingTop: '120px',
-          width: '960px',
-          textAlign: 'center'
-        }}
-      >
-        <div style={{
-            marginBottom: '45px'
-          }}
-        >
-          <button style={{
-            border: 'none',
-            color: '#FFFFFF',
-            backgroundColor: '#6464FF',
-            padding: '10px',
-            width: '300px'
-          }}
-        >
-          Download Resume
-        </button>
-      </div>
+import Layout from '../components/layout'
 
-        <div style={{
-            textAlign: 'center'
-          }}
-        >
-          <h3>Send me an Email!</h3>
-          <form method="POST" action="https://formspree.io/patnaikaj@gmail.com">
-            <input
-              style={{
-                width: '600px',
-                border: '1px solid #ddd',
-                background: '#fff',
-                padding: '10px',
-                marginBottom: '15px'
-              }}
-              type="email"
-              name="email"
-              placeholder="Your email"
-            />
-            <textarea
-              name="message"
-              placeholder="Your message"
-              rows="10"
-              style={{
-                width: '600px',
-                border: '1px solid #ddd',
-                background: '#fff',
-                padding: '10px',
-                marginBottom: '15px'
-              }}>
-            </textarea>
-            <button
-              type="submit"
-              style={{
-                border: 'none',
-                color: '#FFFFFF',
-                backgroundColor: '#6464FF',
-                padding: '10px',
-                width: '600px'
-              }}
-            >
-              Send
-            </button>
-          </form>
+class ContactPage extends Component {
+  componentDidMount() {
+    try {
+      require('../../node_modules/uikit/dist/js/uikit.js')
+      require('../../node_modules/uikit/dist/js/uikit-icons.js')
+    } catch(e) {
+
+    }
+  }
+
+  render() {
+    return (
+      <Layout>
+        <div className="inner-wrapper">
+          <div className="uk-animation-scale-up uk-text-center uk-margin-small-top uk-margin-small-bottom uk-visible@m">
+
+            <a href={resume} download>
+              <button className="download-button uk-margin-bottom">Download Resume</button>
+            </a>
+
+            <div className="uk-margin-top">
+              <h3 style={{color:'#FFFFFF'}}>Send me an Email!</h3>
+              <form method="POST" action="https://formspree.io/patnaikaj@gmail.com">
+                <fieldset className="uk-fieldset">
+
+                  <div className="uk-margin">
+                    <input className="uk-input uk-width-xlarge" name="email" placeholder="Your email" />
+                  </div>
+
+                  <div className="uk-margin">
+                    <textarea className="uk-textarea uk-width-xlarge" rows="10" name="message" placeholder="Your message"></textarea>
+                  </div>
+
+                  <div className="uk-margin">
+                    <button
+                      type="submit"
+                      className="submit-button uk-width-xlarge"
+                    >
+                      Send
+                    </button>
+                  </div>
+
+                </fieldset>
+              </form>
+            </div>
+          </div>
+
+          <div className="uk-animation-scale-up uk-text-center uk-margin-small-top uk-margin-small-bottom uk-hidden@m">
+
+            <a href={resume} download>
+              <button className="download-button-mobile uk-margin-bottom">Download Resume</button>
+            </a>
+
+            <div className="uk-margin-top">
+              <h3 style={{color:'#FFFFFF'}}>Send me an Email!</h3>
+              <form method="POST" action="https://formspree.io/patnaikaj@gmail.com">
+                <fieldset className="uk-fieldset">
+
+                  <div className="uk-margin">
+                    <input className="uk-input" type="email" name="email" placeholder="Your email" />
+                  </div>
+
+                  <div className="uk-margin">
+                    <textarea className="uk-textarea" rows="10" name="message" placeholder="Your message"></textarea>
+                  </div>
+
+                  <div className="uk-margin">
+                    <button type="submit" className="submit-button-mobile">Send</button>
+                  </div>
+
+                </fieldset>
+              </form>
+            </div>
+          </div>
         </div>
-
-      </div>
-    </div>
-)
+      </Layout>
+    );
+  }
+}
 
 export default ContactPage

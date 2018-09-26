@@ -4,6 +4,14 @@ import { Component } from "react";
 import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
 
 class Footer extends Component {
+  componentDidMount() {
+    try {
+      
+    } catch(e) {
+
+    }
+  }
+
   render() {
     return (
       <div className="uk-margin-medium-bottom uk-position-fixed uk-position-bottom uk-visible@m">

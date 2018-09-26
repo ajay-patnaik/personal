@@ -1,83 +1,58 @@
 import React from 'react'
-import Link from 'gatsby-link'
-import PageTransition from 'gatsby-plugin-page-transitions';
+import { Component } from "react"
 
-const SchoolPage = () => (
+import Layout from '../components/layout'
 
-    <div style={{
-        backgroundSize: 'cover',
-        width: '100vw',
-        height: '100vh',
-        color: '#FFFFFF',
-        display: 'flex',
-        justifyContent: 'center',
-      }}
-    >
-      <div style={{
-          paddingTop: '120px',
-          width: '960px',
-          textAlign: 'center',
-          display: 'flex',
-          flexDirection: 'row'
-        }}
-      >
+import udayton1 from '../images/udayton1.png'
+import mason1 from '../images/mason1.jpeg'
 
-        <div style={{
-            width: '48%',
-            marginRight: '4%'
-          }}
-        >
-          <div style={{
-              backgroundColor: '#F2F2F2',
-              height: '400px',
-              borderTopRightRadius: '15px',
-              borderTopLeftRadius: '15px',
-            }}
-          >
+class SchoolPage extends Component {
+  componentDidMount() {
+    try {
+      require('../../node_modules/uikit/dist/js/uikit.js')
+      require('../../node_modules/uikit/dist/js/uikit-icons.js')
+    } catch(e) {
 
-          </div>
+    }
+  }
 
-          <div style={{
-              backgroundColor: 'rgba(242,242,242, .2)',
-              height: '200px',
-              borderBottomRightRadius: '15px',
-              borderBottomLeftRadius: '15px',
-              padding: '15px'
-            }}
-          >
-            <p>William Mason High School</p>
+  render() {
+    return (
+      <Layout>
+        <div className="inner-wrapper">
+          <div className="uk-animation-scale-up uk-text-center uk-margin-small-top uk-margin-small-bottom">
+            <div className="uk-child-width-expand@s uk-text-center" data-uk-grid>
+              <div>
+                <div className="uk-card uk-card-default">
+                  <div className="uk-card-media-top" style={{paddingTop:'10px'}}>
+                    <img src={udayton1} alt="Flyer Enterprises App" style={{height:'150px'}} />
+                  </div>
+                  <div className="uk-card-body" style={{paddingTop:'25px'}}>
+                    <h3><b>University of Dayton</b></h3>
+                    <p>Computer Science Major (GPA: 3.227)</p>
+                    <p>Algorithms & Programming I, Algorithms & Programming II, Computer Organization & Architecture, Discrete Structures, Data Structures & Algorithms, Operating Systems, Design and Analysis of Algorithms, Language Based Security</p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div className="uk-card uk-card-default">
+                  <div className="uk-card-media-top" style={{paddingTop:'10px'}}>
+                    <img src={mason1} alt="Flyer Enterprises App" style={{height:'150px'}} />
+                  </div>
+                  <div className="uk-card-body" style={{paddingTop:'25px'}}>
+                    <h3><b>William Mason High School</b></h3>
+                      <p>Graduated Summa Cum Laude</p>
+                      <p>Computer Programming I, Computer Programming II, Computer Programming III, AP Computer Science</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
-
-        <div style={{
-            width: '48%',
-          }}
-        >
-          <div style={{
-              backgroundColor: '#F2F2F2',
-              height: '400px',
-              borderTopRightRadius: '15px',
-              borderTopLeftRadius: '15px',
-            }}
-          >
-
-          </div>
-
-          <div style={{
-              backgroundColor: 'rgba(242,242,242, .2)',
-              height: '200px',
-              borderBottomRightRadius: '15px',
-              borderBottomLeftRadius: '15px',
-              padding: '15px'
-            }}
-          >
-            <p>University Of Dayton</p>
-          </div>
-        </div>
-
-
-      </div>
-    </div>
-)
+      </Layout>
+    );
+  }
+}
 
 export default SchoolPage
